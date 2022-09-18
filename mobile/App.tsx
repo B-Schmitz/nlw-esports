@@ -8,8 +8,10 @@ import {
   Inter_900Black,
 } from "@expo-google-fonts/inter";
 import { Background } from "./src/components/Background";
-import { Home } from "./src/screens/Home";
+
 import { Loading } from "./src/components/Loading";
+import React from "react";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -27,7 +29,7 @@ export default function App() {
         translucent
       />
 
-      {fontsLoaded ? <Home /> : <Loading />}
+      {fontsLoaded ? <Routes/> : <Loading />}
     </Background>
   );
 }
