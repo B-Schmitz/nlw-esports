@@ -46,9 +46,9 @@ export default function Home() {
   return (
     <div className="mx-20 max-w[1344px] sm:mx-auto flex flex-col items-center mt-10">
       <img src={logoImg} alt="" />
-      <h1 className="text-6xl text-white font-black mt-10">
+      <h1 className="text-6xl text-white font-black mt-10 bg-nlw-gradient bg-clip-text">
         Seu{" "}
-        <span className="text-transparent bg-nlw-gradient bg-clip-text">
+        <span className="text-transparent">
           duo
         </span>{" "}
         está aqui
