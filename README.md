@@ -29,6 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ### Mobile
 - [Expo](https://expo.dev/)
+- [React Native](https://reactnative.dev/)
 
 ### Backend
 - [Node JS](https://nodejs.org/en/)
@@ -37,13 +38,13 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🚀 Como executar
 
-Clone o projeto 
+Clone o projeto.
 
 ```bash
 $ git clone https://github.com/B-Schmitz/nlw-esports.git
 ```
 
-Instale as depências de todas os projetos
+Instale as depêndencias de todas os projetos.
 
 ```bash
 $ npm install | yarn
