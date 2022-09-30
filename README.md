@@ -8,7 +8,7 @@
 </p>
 
 <h1 align="center">
-    <img alt="Find your Duo" src=".github/cover.png" />
+    <img width:600px height: 400px alt="Find your Duo" src=".github/cover.png" />
 </h1>
 
 <br>
