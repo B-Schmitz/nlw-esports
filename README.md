@@ -18,8 +18,7 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ### Web
-- [React](https://reactjs.org)
-- [Vite](https://vitejs.dev/)
+- [React](https://reactjs.org) - [Vite](https://vitejs.dev/)
 - [Radix UI](https://www.radix-ui.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Phosphor Icons](https://phosphoricons.com/)
