@@ -1,21 +1,11 @@
-import axios from "axios";
 import CardInfoAd from "./CardInfoAd";
 import { ToastContainer, toast } from "react-toastify";
+import { API, api } from "../../services";
 
-export interface AdsBanner {
-  id: string;
-  name: string;
-  hourEnd: string;
-  hourStart: string;
-  useVoiceChannel: boolean;
-  weekDays: string[];
-  yearsPlaying: number;
-}
-
-export default function CardAd(props: AdsBanner) {
+export default function CardAd(props: API.Ads) {
   const handleConectar = () => {
-    axios(`http://localhost:3333/ads/${props.id}/discord`).then((response) => {
-      navigator.clipboard.writeText(response.data.discord);
+    api.ads_id_discord_get(props.id).then((response) => {
+      navigator.clipboard.writeText(response.discord);
       toast.success("Discord copiado!");
     });
   };

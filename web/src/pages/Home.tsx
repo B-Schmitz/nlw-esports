@@ -1,23 +1,14 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import CreateAdBanner from "../components/CreateAdBanner";
 import CreateAdModal from "../components/Form/CreateAdModal";
 import GameBanner from "../components/GameBanner";
 import logoImg from "../assets/logo-nlw-esports.svg";
 import { Link } from "react-router-dom";
-
-export interface Game {
-  id: string;
-  title: string;
-  bannerUrl: string;
-  _count: {
-    ads: number;
-  };
-}
+import { api, API } from "../services";
 
 export default function Home() {
-  const [games, setGames] = useState<Game[]>([]);
+  const [games, setGames] = useState<API.Game[]>([]);
 
   const renderGames = () => {
     return games.map((game) => {
@@ -38,20 +29,14 @@ export default function Home() {
   };
 
   useEffect(() => {
-    axios("http://localhost:3333/games").then((response) => {
-      setGames(response.data);
-    });
+    api.games_get().then(setGames);
   }, []);
 
   return (
     <div className="mx-20 max-w[1344px] sm:mx-auto flex flex-col items-center mt-10">
       <img src={logoImg} alt="" />
       <h1 className="text-6xl text-white font-black mt-10 bg-nlw-gradient bg-clip-text">
-        Seu{" "}
-        <span className="text-transparent">
-          duo
-        </span>{" "}
-        está aqui
+        Seu <span className="text-transparent">duo</span> está aqui
       </h1>
       <div className="px-10 max-w[1344px] mx-auto flex flex-col items-center">
         <div className="mt-10 flex basis-0 flex-wrap ">{renderGames()}</div>

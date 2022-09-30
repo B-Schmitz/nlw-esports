@@ -1,32 +1,18 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
-
 import logoImg from "../assets/logo-nlw-esports.svg";
 import CardAd from "../components/Card/CardAd";
 import { ArrowArcLeft } from "phosphor-react";
-
-interface AdsBanner {
-  id: string;
-  name: string;
-  hourEnd: string;
-  hourStart: string;
-  useVoiceChannel: boolean;
-  weekDays: string[];
-  yearsPlaying: number;
-}
+import { API, api } from "../services";
 
 export default function AdsGame() {
-  const [ads, setAds] = useState<AdsBanner[]>([]);
+  const [ads, setAds] = useState<API.Ads[]>([]);
   const { id } = useParams();
 
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios(`http://localhost:3333/games/${id}/ads`).then((response) => {
-      console.log(response.data)
-      setAds(response.data);
-    });
+    api.games_id_ads_get(id as string).then(setAds)
   }, []);
 
   return (

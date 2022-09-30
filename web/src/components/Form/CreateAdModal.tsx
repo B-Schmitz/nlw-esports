@@ -10,10 +10,9 @@ import { useForm } from "react-hook-form";
 
 import { ToastContainer, toast } from "react-toastify";
 
-import axios from "axios";
-
 import Input from "./Input";
 import Option from "./Option";
+import { API, api } from "../../services";
 
 interface Game {
   id: string;
@@ -45,26 +44,25 @@ export default function CreateAdModal() {
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      await axios
-        .post(`http://localhost:3333/games/${gameId}/ads`, {
-          name: data.name,
-          yearsPlaying: Number(data.yearsPlaying),
-          discord: data.discord,
-          weekDays: weekDays.map(Number),
-          hourStart: data.hourStart,
-          hourEnd: data.hourEnd,
-          useVoiceChannel: useVoiceChannel,
-        })
-        .then(() => {
-          toast.success("Anúncio cadastrado com sucesso!");
-        });
+
+      let obj: API.AdsPost= {
+        name: data.name,
+        yearsPlaying: Number(data.yearsPlaying),
+        discord: data.discord,
+        weekDays: weekDays.map(Number),
+        hourStart: data.hourStart,
+        hourEnd: data.hourEnd,
+        useVoiceChannel: useVoiceChannel,
+      }
+
+      api.games_id_ads_post(gameId, obj).then(()=> {
+        toast.success("Anúncio cadastrado com sucesso!");
+      })
     } catch (error) {}
   });
 
   useEffect(() => {
-    axios("http://localhost:3333/games").then((response) => {
-      setGames(response.data);
-    });
+    api.games_get().then(setGames);
   }, []);
 
   return (
