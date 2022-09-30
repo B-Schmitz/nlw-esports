@@ -18,11 +18,8 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ### Web
-- [React](https://reactjs.org) - [Vite](https://vitejs.dev/)
-- [Radix UI](https://www.radix-ui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Phosphor Icons](https://phosphoricons.com/)
-- [React Hook Form](https://react-hook-form.com/)
+- [React](https://reactjs.org) - [Vite](https://vitejs.dev/) - [Radix UI](https://www.radix-ui.com/)
+- [Tailwind CSS](https://tailwindcss.com/) - [Phosphor Icons](https://phosphoricons.com/) - [React Hook Form](https://react-hook-form.com/)
 - [React Toastify](https://www.npmjs.com/package/react-toastify)
 - [TypeScript](https://www.typescriptlang.org/)
 
