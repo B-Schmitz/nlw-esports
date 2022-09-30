@@ -60,8 +60,7 @@ $ npm run android | yarn android
 
 ## 💻 Projeto
 
-[W.I.P]
-
+9° Edição da NLW - Intuito desse projeto era desenvolver uma aplicação tanto web como mobile de um plataforma aonde as pessoas publicam anúncios buscando novos jogadores para jogarem juntos, visualizam os anúncios já criados e também compartilham seus nomes do discord para assim combinar a jogatina!
 
 ## 🔖 Layout
 
